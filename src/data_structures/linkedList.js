@@ -86,6 +86,18 @@ class LinkedList {
     return null;
   }
 
+  // Get middle node
+  getMiddleNode() {
+    let slow = this.head;
+    let fast = this.head;
+
+    while(fast !== null && fast.next !== null) {
+      slow = slow.next;
+      fast = fast.next.next;
+    }
+    return slow
+  }
+
   // Remove at index
   removeAt(index) {
     if (index > 0 && index > this.size) {
@@ -136,5 +148,5 @@ test.insertFirst(300);
 test.insertLast(400);
 test.insertAt(500, 3);
 test.printListData();
-
   
+test.getMiddleNode()
